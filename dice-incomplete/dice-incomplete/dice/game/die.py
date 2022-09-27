@@ -40,3 +40,8 @@ class Die():
 
         elif self.value == 5:
             self.points += 50
+
+
+
+
+

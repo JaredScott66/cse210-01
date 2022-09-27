@@ -1,4 +1,4 @@
-from game.dealer import Dealer
+from cards.dealer import Dealer
 
 
 class Director:
@@ -46,7 +46,8 @@ class Director:
         """
         card = Dealer()
         self.first_card = card.draw()
-        print("Your card is: " + self.first_card)
+        print(f"Your card is: {self.first_card}")
+        print(card)
         guess_card = input("Higher or lower? [h/l]")
         
 

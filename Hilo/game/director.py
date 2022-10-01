@@ -1,4 +1,4 @@
-from game.dealer import Dealer
+from dealer import Dealer
 
 
 class Director:
@@ -45,8 +45,9 @@ class Director:
             self (Director): An instance of Director.
         """
         card = Dealer()
-        self.first_card = card.draw()
-        print("Your card is: " + self.first_card)
+        card.draw()
+        self.first_card = card.value
+        print("Your card is: " + card.value)
         guess_card = input("Higher or lower? [h/l]")
         
 
@@ -60,19 +61,20 @@ class Director:
             return
         
         second_card = Dealer()
+        second_card.draw()
 
         if guess_card == "h":
-            if self.first_card > second_card:
+            if self.first_card > second_card.value:
                 self.current_score += self.points_added
 
-            elif self.first_card < second_card:
+            elif self.first_card < second_card.value:
                 self.current_score -= self.points_deducted
 
         elif guess_card == "l":
-            if self.first_card < second_card:
+            if self.first_card < second_card.value:
                 self.current_score += self.points_added
             
-            elif self.first_card > second_card:
+            elif self.first_card > second_card.value:
                 self.current_score -= self.points_deducted
 
     def do_outputs(self):

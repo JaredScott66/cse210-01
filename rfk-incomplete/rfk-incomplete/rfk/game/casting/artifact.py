@@ -7,3 +7,12 @@ class Artifact(Actor):
 
     def __init__(self):
         super().__init__()
+        self._message = ""
+    
+
+    def set_message(message):
+
+        self._message = message
+
+    def get_message():
+        return self._message

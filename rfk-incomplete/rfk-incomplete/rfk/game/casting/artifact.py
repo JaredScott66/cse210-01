@@ -7,10 +7,6 @@ class Artifact(Actor):
 
     def __init__(self):
         super().__init__()
-<<<<<<< HEAD
-        
-    
-=======
         self._message = ""
     
 
@@ -20,4 +16,4 @@ class Artifact(Actor):
 
     def get_message():
         return self._message
->>>>>>> f181f99b9ec96ea24245795e4573496e8391ec3f
+

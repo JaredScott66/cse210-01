@@ -5,7 +5,15 @@ from game.scripting.action import Action
 class MoveActorsAction(Action):
 
     def execute(self, cast, script):
-        pass
+        
+        actors = cast.get_all_actors()
+        for i in actors:
+            i.move_next()
+
+        
+
+
+
 # Override the execute(cast, script) method as follows:
 # 1) get all the actors from the cast
 # 2) loop through the actors

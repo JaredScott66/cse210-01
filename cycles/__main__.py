@@ -20,13 +20,11 @@ def main():
     
     # create the cast
     cast = Cast()
-    snake = Snake()
+    #snake = Snake()
 
     cast.add_actor("foods", Food())
-    #snake.set_s_color(constants.RED)
-    cast.add_actor("cycle1", Snake())
-    #snake.set_cycle(2)
-    cast.add_actor("cycle2", Snake())
+    cast.add_actor("cycle1", Snake(1))
+    cast.add_actor("cycle2", Snake(2))
     cast.add_actor("scores", Score())
    
     # start the game

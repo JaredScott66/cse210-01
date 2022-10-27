@@ -32,8 +32,3 @@ class GetText:
     def get_text(self):
         return self._text
 
-    def set_choice(self, file):
-        
-        while open(file, "r") as file_choice:
-
-            csv_file = csv.read(file_choice)

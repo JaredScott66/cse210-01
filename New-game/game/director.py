@@ -1,4 +1,4 @@
-
+from game.text_get import GetText
 
 class Director():
     """Directs flow of game.
@@ -18,6 +18,7 @@ class Director():
         self._text = ""
         self._player_input = ""
         self._is_playing = True
+        self._step = 0
 
 
     def start_game(self):
@@ -28,14 +29,30 @@ class Director():
         """
         print("Welcome to the text bases adventure game.\nGHOST SHIP\nLets begin!\n")
         while self._is_playing == True:
+            self._step += 1
             self._get_inputs()
             self._do_updates()
             self._do_outputs()
 
-    def get_inputs(self):
+    def _get_inputs(self):
         """Gets input from player according to the choice made from the given scenario.
 
         Args:
             self(Director) An instance of Director
         """
+        print("test")
         self._player_input = input("")
+
+    def _do_updates(self):
+        """Updates game state and variables.
+
+        Args:
+            self(Director) An instance of Director.
+        """
+        file = "New-game\game\Text\step_1.txt"
+        get_text = GetText()
+        get_text.file_read(file)
+        self._text = get_text.get_text()
+
+    def _do_outputs(self):
+        print(self._text)

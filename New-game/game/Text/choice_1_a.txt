@@ -1,0 +1,2 @@
+1: STAIRS
+2: DOOR

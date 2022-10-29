@@ -19,7 +19,7 @@ class GetText:
         """
         self._file = ""
         self._text = ""
-        self._choices = []
+        self._choices = ""
 
     def file_read(self, file):
         
@@ -32,3 +32,13 @@ class GetText:
     def get_text(self):
         return self._text
 
+    def set_choice(self, file):
+
+        with open(file, "r") as choice_file:
+
+            self._choices = choice_file.read()
+
+        choice_file.close()
+
+    def get_choice(self):
+        return self._choices
